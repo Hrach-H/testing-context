@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Route, Switch, NavLink } from 'react-router-dom';
 import ErrorHandling from 'components/ErrorHandling';
 import makeLoadable from 'src/makeLoadable';
 
-const Main = makeLoadable('./components/Main');
+const LoadableMain = makeLoadable({ path: './components/Main' });
+const Home = makeLoadable({ path: './components/Home' });
 
 export const AppContext = React.createContext();
 const { Provider } = AppContext;
@@ -19,14 +21,41 @@ class App extends Component {
   };
 
   render() {
+    const Navigation = () => {
+      return (
+        <nav className="ui two item menu">
+          <NavLink exact to="/" className="item">
+            Home
+          </NavLink>
+          <NavLink to="/main" className="item">
+            Main
+          </NavLink>
+        </nav>
+      );
+    };
+    const View = () => {
+      const Main = () => (
+        <Provider value={this.state.contextValue}>
+          <LoadableMain changeContext={this.toggleContext} />
+        </Provider>
+      );
+
+      return (
+        <Switch>
+          <Route exact path="/" component={Home} />
+          {/* Using render method to pass props to the LoadableMain component through Route */}
+          <Route path="/main" render={Main} />
+        </Switch>
+      );
+    };
+
     return (
-      <ErrorHandling>
-        <div className="ui container">
-          <Provider value={this.state.contextValue}>
-            <Main changeContext={this.toggleContext} />
-          </Provider>
-        </div>
-      </ErrorHandling>
+      <div className="ui container">
+        <ErrorHandling>
+          <Navigation />
+          <View />
+        </ErrorHandling>
+      </div>
     );
   }
 }

@@ -8,14 +8,11 @@ const Wrapper = styled.section`
   background: lightgrey;
 `;
 
-const P = styled.p`
-  font-weight: bold;
-`;
 
 const Main = (props) => {
   return (
     <Wrapper>
-      <AppContext.Consumer>{(context) => <P>This is the default context: {context}</P>}</AppContext.Consumer>
+      <AppContext.Consumer>{(context) => <p>This is the context: <b>{context}</b></p>}</AppContext.Consumer>
       <button className="ui primary button" onClick={props.changeContext}>
         Change context
       </button>
