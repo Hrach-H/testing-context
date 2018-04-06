@@ -16,7 +16,7 @@ const ContextChange = (props) => {
       <button className="ui primary button" onClick={props.changeContext}>
         Toggle context
       </button>
-      <span className="ui left pointing red basic label">
+      <span className="ui red basic label">
         Changing the context will re-render the whole App, because it changes its state
       </span>
     </Wrapper>
