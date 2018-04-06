@@ -90,6 +90,8 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
+      'components': path.resolve('src/components'),
+      'src': path.resolve('src/'),
       //'react': 'preact-compat',
       //'react-dom': 'preact-compat',
       // Support React Native Web
