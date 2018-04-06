@@ -21,9 +21,7 @@ class StateChange extends Component {
         <button className="ui primary button" onClick={this.toggleStateValue}>
           Toggle state
         </button>
-        <span className="ui label">
-          Changing the state will re-render the parts of this component where it is used
-        </span>
+        <span className="ui label">Changing the state will re-render the parts of this component where it is used</span>
       </Wrapper>
     );
   }

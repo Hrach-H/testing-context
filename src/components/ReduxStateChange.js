@@ -14,17 +14,16 @@ const ReduxStateChange = (props) => {
         Toggle state
       </button>
       <span className="ui label">
-          Changing the redux state will re-render the parts of this component where it is used
-        </span>
+        Changing the redux state will re-render the parts of this component where it is used
+      </span>
     </Wrapper>
   );
 };
 
-
 const mapStateToProps = (state) => {
   return {
     mainReducer: state.mainReducer
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -32,7 +31,7 @@ const mapDispatchToProps = (dispatch) => {
     changeGlobalState() {
       dispatch(toggleGlobalState());
     }
-  }
+  };
 };
 
 ReduxStateChange.propTypes = {
@@ -40,4 +39,4 @@ ReduxStateChange.propTypes = {
   changeGlobalState: PropTypes.func
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReduxStateChange)
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxStateChange);

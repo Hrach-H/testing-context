@@ -6,7 +6,7 @@ import makeLoadable from 'src/makeLoadable';
 const Home = makeLoadable({ path: './components/Home' });
 const LoadableContextChange = makeLoadable({ path: './components/ContextChange' });
 const StateChange = makeLoadable({ path: './components/StateChange' });
-const ReduxStateChange = makeLoadable({path: './components/ReduxStateChange'});
+const ReduxStateChange = makeLoadable({ path: './components/ReduxStateChange' });
 
 export const AppContext = React.createContext();
 const { Provider } = AppContext;
