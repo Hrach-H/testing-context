@@ -13,7 +13,7 @@ export default function makeLoadable(path) {
             <Loader size="large">Loading</Loader>
           </Dimmer>
         </Segment>
-      )
+      );
     }
   });
 }

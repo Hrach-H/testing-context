@@ -13,13 +13,13 @@ class ErrorHandling extends Component {
   };
 
   componentDidCatch(error, info) {
-    this.setState({hasError: true});
+    this.setState({ hasError: true });
     console.warn(info);
   }
 
   render() {
     if (this.state.hasError) {
-      return <Title>Oops... Something went wrong</Title>
+      return <Title>Oops... Something went wrong</Title>;
     }
     return this.props.children;
   }

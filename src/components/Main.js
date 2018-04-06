@@ -15,10 +15,10 @@ const P = styled.p`
 const Main = (props) => {
   return (
     <Wrapper>
-      <AppContext.Consumer>
-        { context => <P>This is the default context: { context }</P> }
-      </AppContext.Consumer>
-      <button className='ui primary button' onClick={props.changeContext}>Change context</button>
+      <AppContext.Consumer>{(context) => <P>This is the default context: {context}</P>}</AppContext.Consumer>
+      <button className="ui primary button" onClick={props.changeContext}>
+        Change context
+      </button>
     </Wrapper>
   );
 };
